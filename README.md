@@ -101,3 +101,15 @@ docker-compose -f docker-compose-build.yaml build --parallel
 sudo systemctl restart docker (For debugging)
 
 docker run -it image_name sh (see the content of docker image)
+
+# Apply env variables and secrets
+
+kubectl apply -f ./deployments/aws-secret.yaml
+kubectl apply -f ./deployments/env-secret.yaml
+kubectl apply -f ./deployments/env-configmap.yaml
+kubectl apply -f ./deployments/backend-user-deployment.yaml
+kubectl apply -f ./deployments/backend-feed-deployment.yaml
+kubectl apply -f ./deployments/frontend-deployment.yaml
+kubectl apply -f ./deployments/reverseproxy-deployment.yaml
+
+kubectl delete deployments [deployment-name]
