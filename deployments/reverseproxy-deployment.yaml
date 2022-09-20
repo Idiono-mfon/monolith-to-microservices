@@ -25,6 +25,7 @@ kind: Service
 metadata:
   name: reverseproxy-service
 spec:
+  type: LoadBalancer
   selector:
     app: reverseproxy
   ports:

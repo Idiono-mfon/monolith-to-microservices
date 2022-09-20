@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: idysman/udagram-frontend:v1
+          image: idysman/udagram-frontend:v3
           ports:
             - containerPort: 8100
 ---
@@ -25,9 +25,10 @@ kind: Service
 metadata:
   name: frontend-service
 spec:
+  type: LoadBalancer
   selector:
     app: front-end
   ports:
     - protocol: TCP
-      port: 8100
+      port: 80
       targetPort: 8100
