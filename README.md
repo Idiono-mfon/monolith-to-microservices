@@ -113,3 +113,9 @@ kubectl apply -f ./deployments/frontend-deployment.yaml
 kubectl apply -f ./deployments/reverseproxy-deployment.yaml
 
 kubectl delete deployments [deployment-name]
+
+(Expose frontend service)
+kubectl expose deployment frontend-deployment --type=LoadBalancer --name=frontend-service
+
+(Expose Nginx server)
+kubectl expose deployment reverseproxy-deployment --type=LoadBalancer --name=reverseproxy-service

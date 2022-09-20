@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: reverseproxy
-          image: idysman/reverseproxy:v1
+          image: idysman/reverseproxy:v2
           ports:
             - containerPort: 8080
 ---
